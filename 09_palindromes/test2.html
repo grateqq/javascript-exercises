@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+
+
+function palindromo (word) {
+word = word.split("") 
+console.log(word.length/2) 
+console.log(word.length)
+console.log(word)
+wordlong = Math.floor(word.length / 2)
+console.log(wordlong)
+
+console.log("inicio")
+
+for (i=0; i<wordlong; i ++) {
+  //console.log(word[i])
+  //console.log(word[word.length-1-i])
+  let a = word[i]
+  let b = word[word.length-1-i]
+  console.log(a)
+  console.log(b)
+  if (a !== b) {return false}
+  }
+
+  return true
+}
+
+console.log(palindromo ("racecar!"))
+
+  </script>
+</body>
+</html>
