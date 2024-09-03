@@ -1,4 +1,9 @@
 const palindromes = function (word) {
+  console.log("---" + word)
+  word = word.replace(/[^a-zA-Z0-9]/g, "")
+  word = word.toLowerCase()
+  console.log("--->" + word)
+  
   word = word.split("") 
   console.log(word.length/2) 
   console.log(word.length)
