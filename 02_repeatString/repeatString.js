@@ -1,9 +1,13 @@
 const repeatString = function (word, num) {
-  var saveword = word;
-  for (i = 1; i < num; i++) {
-    saveword = saveword.concat(word);
+  if (num < 0) {
+    return "ERROR";
+  } else {
+    var saveword = "";
+    for (i = 0; i < num; i++) {
+      saveword = saveword.concat(word);
+    }
+    return saveword;
   }
-  return saveword;
 };
 
 // Do not edit below this line
