@@ -1,37 +1,45 @@
-const findTheOldest = function(array) {
-  
-  /*array.unshift({
-     name: "None",
-     yearOfBirth: 1942,
-     yearOfDeath: 1942,
-   }) 
-   */
-  let old = array[0]
-   for (i=0; i<array.length; i ++) {
-     // console.log(array[i].yearOfDeath)
-     // console.log((array[i].yearOfDeath == undefined))
-     // console.log((array[i].yearOfDeath == "NaN"))
-     // console.log((array[i].yearOfDeath === "NaN"))
-     // console.log((array[i].yearOfDeath === NaN))
-     if (array[i].yearOfDeath == undefined) { array[i].yearOfDeath = 2024}
-   }
-   console.log(array)
-   for (i=1; i<array.length; i ++) {
-     
-     console.log(array[i])
-     console.log(array[i].yearOfDeath-array[i].yearOfBirth)
-     console.log(old.yearOfDeath-old.yearOfBirth)
-     console.log(array[i].yearOfDeath-array[i].yearOfBirth > old.yearOfDeath-old.yearOfBirth)
- 
-     if (array[i].yearOfDeath-array[i].yearOfBirth > old.yearOfDeath-old.yearOfBirth) {
-       
-       old = array[i]
-     }
-     
-   }
-   console.log("FIN")
-   return old
- }
+const findTheOldest = function (array) {
+  const newarray = array;
+  //console.log(newarray)
 
+  const date = new Date().getFullYear(); //2026
+
+  function verf(array) {
+    array.forEach((item) => {
+      if (item.yearOfDeath === undefined) {
+        //console.log("error")
+        item.yearOfDeath = date;
+        //console.log(item)
+      }
+    });
+  }
+
+  verf(array);
+  //console.log(newarray)
+  // esta completado
+  let resultado = newarray[0];
+  const oldman = newarray.reduce((acc, cur) => {
+    console.log("---- turn");
+    console.log(acc);
+    console.log(cur);
+    const edadAcc = acc.yearOfDeath - acc.yearOfBirth;
+    const edadCur = cur.yearOfDeath - cur.yearOfBirth;
+    if (edadAcc > edadCur) {
+      console.log(acc.name + ": " + edadAcc);
+      console.log(cur.name + ": " + edadCur);
+      return acc;
+    } else {
+      console.log(acc.name + ": " + edadAcc);
+      console.log(cur.name + ": " + edadCur);
+      return cur;
+    }
+    //console.log("resultado")
+    console.log(resultado);
+  }, resultado);
+
+  console.log("---END ---");
+
+  return oldman;
+};
 // Do not edit below this line
 module.exports = findTheOldest;
