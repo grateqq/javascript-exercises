@@ -2,7 +2,7 @@ const palindromes = function (word) {
   const wordarray = word.toLowerCase().split("");
   //console.log(wordarray)
 
-  const wordfilter = wordarray.filter((i) => testvalid2(i));
+  const wordfilter = wordarray.filter((i) => testvalid3(i));
   const word1 = wordfilter.join("");
   let wordinv = [];
   for (let i = 0; i < word1.length; i++) {
@@ -34,7 +34,15 @@ function testvalid2(item) {
     return false;
   }
 }
-//console.log(testvalid(" "))
+
+function testvalid3(item) {
+  let code = item.charCodeAt();
+  if ((code >= 97 && code <= 122) || (code >= 48 && code <= 57)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Do not edit below this line
 module.exports = palindromes;
