@@ -1,12 +1,4 @@
-const getTheTitles = function(array) {
-  let arrayTitles = []
-  array.forEach(element => {arrayTitles.push(element.title)
-    
-  });
-
-  console.log(arrayTitles)
-  return arrayTitles
-};
+const getTheTitles = function (array) {};
 
 // Do not edit below this line
 module.exports = getTheTitles;
