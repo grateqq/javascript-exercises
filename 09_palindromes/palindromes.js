@@ -1,30 +1,31 @@
 const palindromes = function (word) {
-  console.log("---" + word)
-  word = word.replace(/[^a-zA-Z0-9]/g, "")
-  word = word.toLowerCase()
-  console.log("--->" + word)
-  
-  word = word.split("") 
-  console.log(word.length/2) 
-  console.log(word.length)
-  console.log(word)
-  wordlong = Math.floor(word.length / 2)
-  console.log(wordlong)
-  
-  console.log("inicio")
-  
-  for (i=0; i<wordlong; i ++) {
-    //console.log(word[i])
-    //console.log(word[word.length-1-i])
-    let a = word[i]
-    let b = word[word.length-1-i]
-    console.log(a)
-    console.log(b)
-    if (a !== b) {return false}
-    }
-  
-    return true
+  const wordarray = word.toLowerCase().split("");
+  //console.log(wordarray)
+
+  const wordfilter = wordarray.filter((i) => testvalid(i));
+  const word1 = wordfilter.join("");
+  let wordinv = [];
+  for (let i = 0; i < word1.length; i++) {
+    //console.log(word1[word1.length-1-i])
+    wordinv.push(word1[word1.length - 1 - i]);
+  }
+  const word2 = wordinv.join("");
+  //console.log("w2: " + word2)
+
+  if (word1 === word2) {
+    return true;
+  } else {
+    return false;
+  }
 };
+
+function testvalid(item) {
+  const valid = "abcdefghijklmnopqrstuvwxyz0123456789";
+  const check = valid.includes(item);
+  //console.log(valid)
+  return check;
+}
+//console.log(testvalid(" "))
 
 // Do not edit below this line
 module.exports = palindromes;
