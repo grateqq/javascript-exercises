@@ -14,10 +14,10 @@ const findTheOldest = function (array) {
     });
   }
 
-  verf(array);
+  verf(newarray);
   //console.log(newarray)
   // esta completado
-  let resultado = newarray[0];
+  //let resultado = newarray[0];
   const oldman = newarray.reduce((acc, cur) => {
     console.log("---- turn");
     console.log(acc);
@@ -35,7 +35,7 @@ const findTheOldest = function (array) {
     }
     //console.log("resultado")
     console.log(resultado);
-  }, resultado);
+  }, newarray[0]);
 
   console.log("---END ---");
 
